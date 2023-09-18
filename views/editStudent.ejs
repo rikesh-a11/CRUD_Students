@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/editStudent.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Student Info</h1>
+        <a href="/">Home</a>
+    </header>
+
+    <form action="/editStudent/<%- student[0].id %> " id="student-form" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" value="<%- student[0].name %>" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" value="<%- student[0].email %>" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age" style="padding: 10px;">Age</label>
+            <input type="number" value="<%- student[0].age %>" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" value="male" name="gender" <% if (student[0].gender === 'male') { %> checked <% } %> required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" value="female" name="gender" <% if (student[0].gender === 'female') { %> checked <% } %> required>
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" value="other" name="gender" <% if (student[0].gender === 'other') { %> checked <% } %> required>
+            <label for="other">Other</label>
+        </div>
+
+        <div class="form-group">
+            <input class="button" type="submit" value="Submit">
+            <a href="/single/<%- student[0].id %>" class="button">Cancel</a>
+        </div>
+    </form>
+
+    <footer>
+        <p>&copy; 2023 Our School. All rights reserved.</p>
+    </footer>
+</body>
+</html>

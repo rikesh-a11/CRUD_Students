@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SMS</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1 style="color: azure;">Welcome to our school</h1>
+        <a href="/CreateStudent">Add Student</a>
+    </div>
+
+    <!-- Card Section -->
+    <div class="card-container">
+        <% students.forEach((student) => { %>
+            <div class="card">
+                <h2><%- student.name %></h2>
+                <h3><%- student.email %></h3>
+                <p>Age: <%- student.age %></p>
+                <p>Gender: <%- student.gender %></p>
+                <a href="/single/<%- student.id %>">Read more</a>
+            </div>
+        <% }) %>
+    </div>
+    <footer>
+        <p>&copy; 2023 Our School. All rights reserved.</p>
+    </footer>
+</body>
+</html>
